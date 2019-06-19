@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand|Rubik');
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background: #eee;
+}
+
+.box {
+    background:#fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 120px auto;
+    padding: 30px;
+    width: 80%;
+    border-radius: 4px;
+    border: #ccc solid 1px;
+    box-shadow: 0.5px 1px #ccc;
+    font-family: Rubik;
+}
+
+.box .login {
+    display: flex;
+    flex-direction: column;
+}
+
+.box h3 {
+    font: bold;
+    font-size:31px;
+}
+
+.box .text-1 {
+    padding: 10px;
+    width: 300px;
+    border-radius: 10px;
+    font-family: quicksand;
+}
+
+.box #submit {
+    padding: 10px;
+    width: 321px;
+    background:#0F9D58;
+    border: 0px;
+}
+
+.notice {
+    position: fixed;
+    bottom: 40px;
+    left: -1200px;
+    background: #111;
+    color: #fff;
+    padding: 10px;
+    font-family: 'Quicksand', sans-serif;
+    box-shadow: 0px 0px 8px 2px #ccc;
+    border-radius: 5px;
+    transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
+    transition-duration: 0.5s;
+}
+
+.notice.show {
+    bottom: 40px;
+    left: 80px;
+}

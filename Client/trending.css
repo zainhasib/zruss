@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand|Rubik');
+*{
+  margin:0;
+  padding:0;
+}
+.top{
+  margin:15px;
+  /*background:blue;*/
+}
+.top h1{
+  margin-left: 30px;
+  font-family: Rubik;
+}
+.top p{
+  font-family: Quicksand;
+  font-size: 16px;
+  margin-left: 20px;
+  margin-top:20px;
+  margin-right:500px;
+}
+@keyframes move {
+  0% { background-position: 0 0; }
+  100% { background-position: 1300px 0; } 
+}
+img.image{
+  width: 220px;
+  height: 300px;
+  border:2px solid black;
+  background: linear-gradient(to right, #fff, #eee, #fff);
+  animation: move 5s infinite;
+}
+.image p{
+  font-family: Quicksand;
+  font-weight: bold;
+}
+.row{
+  display:flex;
+  justify-content: space-around;
+  margin-bottom:70px;
+}
+
+section {
+  width: 100%;
+}
+
+.books {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-decoration: none !important;
+}
+
+.book-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.book-title {
+  margin: 20px 30px;
+}
+
+.book {
+  flex-flow: wrap;
+  display: flex;
+  width: 220px;
+  margin: 20px 30px;
+  flex-direction: column;
+}
+
+.author {
+  font-size: 0.8em;
+}

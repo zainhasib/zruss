@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand|Roboto');
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.footer {
+  min-height: 180px;
+  height: auto;
+  background: #eee;
+}
+
+.footer-wrapper {
+  width: 80%;
+  margin: auto;
+  padding: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: row;
+}
+
+.footer-item-list {
+  margin: 0px 25px;
+}
+
+.footer-item-head {
+  font-family: 'Rubik', sans-serif;
+  font-size: 0.95em;
+}
+
+.footer-item {
+  font-size: 0.85em;
+  color: #444;
+  transition-delay: 0.5s;
+  transition-timing-function: ease;
+  margin: 3px 0px;
+  cursor: default;
+  text-decoration: none;
+}
+
+.footer-item:hover {
+  text-decoration: underline;
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: row;
+}
+
+.footer-brand {
+  padding: 10px;
+}
+
+
+@media only screen and (max-width: 868px) {
+  .footer-right {
+    display: flex;
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand|Rubik');
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.wrapper {
+    width: 90%;
+    margin: auto;
+    position: relative;
+}
+
+.user {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    background: rgba(255, 255, 255, 0.459);
+    border-radius: 50%;
+    padding: 8px;
+}
+
+.wrapper .image {
+    background: url("archive-beautiful-book-stack-256455.jpg") rgba(0,0,0,0.7);
+    background-blend-mode: overlay;
+    background-repeat:no-repeat;
+    background-position: center;
+    background-size:cover;
+    height:300px;
+    width:100%;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper .image h2{
+    color:#fff;
+    font-size:22px;
+    font-family: rubik;
+    margin: 20px 0px;
+}
+
+.wrapper .image .btn {
+    padding:8px 15px;
+    border:0px;
+    background:#2196f3;
+    border-radius: 15px;
+    color:#fff;
+    font:bold;
+    font-size: 17px;
+    font-family: rubik; 
+    outline: none;
+}
+
+.wrapper .image .btn:hover {
+    /* background:#1976d2; */
+    background: linear-gradient(#2196f3, #1976d2);
+}
+
+hr {
+    color:blue;
+}
+/*
+.popular {
+    top:100px;
+    height: 800px;
+    flex-flow:wrap;
+}
+
+.popular div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+    margin: 0px 25px;
+}
+
+hr {
+    border-width: 1.7px;
+}
+*/
+
+section {
+    width: 100%;
+}
+
+.books {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-decoration: none !important;
+}
+
+.book-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.book-title {
+    margin: 20px 30px;
+}
+
+.book {
+    flex-flow: wrap;
+    display: flex;
+    width: 220px;
+    margin: 20px 30px;
+    flex-direction: column;
+}
+
+.author {
+    font-size: 0.8em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand|Rubik');
+
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+.cont1{
+    background-color: black;
+    width:auto;
+    height:100px;
+    margin:100px 50px 0 50px;
+    opacity:0.8;
+    position: relative;
+}
+.icon img{
+  max-width: 100%;
+  max-height: 100%;
+  position: relative;
+  bottom:18px;
+}
+.icon{
+    position: absolute;
+    top:10px;
+    left:10px;
+    background-color: #FFFFFF;
+    height: 50px;
+    border-radius:50%;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.heading{
+    color:white;
+    font-size: 10px;
+    font-family: Rubik;
+    position: absolute;
+    left:70px;
+    top:20px;
+}
+.percent{
+    color:white;
+    position: absolute;
+    left:90px;
+    top:40px;
+}
+.calctaste{
+    border:1px solid white;
+    position: absolute;
+    right:20px;
+    top:20px;
+    padding: 5px;
+}
+.interestbut{
+  color:white;
+  background-color: black;
+  padding: 5px;
+}
+.interestbut:hover{
+  outline: 4px solid rgb(255,255,255,0.6);
+}
+.heading2{
+    margin:50px 0 0 50px;
+}
+.para{
+    margin:0 0 50px 50px;
+}
+/*
+.cont3{
+  display:flex;
+  justify-content: space-around;
+}
+<div class="cont3">
+     <div class="image1"><a><img src="popular.jpg" alt=""></a></div>
+     <div class="image1"><a><img src="new.jpg" alt=""></a></div>
+     <div class="image1"><a><img src="trending.jpg" alt=""></a></div>
+ </div>
+
+.image1 img{
+  max-width: 100%;
+  max-height: 100%;
+  border:5px solid black;
+}
+
+.image1{
+  width:280px;
+  height:250px;
+}
+*/
+
+.cont3 {
+  display: flex;
+  justify-content: space-around;
+}
+.container-1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-bottom: 50px;
+}
+
+.container-1 .item {
+  height: 300px;
+  width: 280px;
+  font-size: 1.1em;
+  text-align: center;
+  text-decoration: none;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.container-1 .item img {
+  height: inherit;
+  width: inherit;
+}
+
+.genre-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+a.genre {
+  color: #000;
+  background: #eee;
+  padding: 10px;
+  margin: 10px;
+  box-sizing: border-box;
+}
+
+@media only screen and (max-width: 868px) {
+  .container-1 {
+    flex-direction: column;
+    height: auto;
+  }
+  .container-1 .item {
+    margin: 20px auto;
+  }
+}
