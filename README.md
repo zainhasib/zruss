@@ -20,4 +20,5 @@ Group Project
 
 
 ## Pull the repository
+Open the location of project in cmd i.e. C://xampp/htdocs/zruss
 `git pull https://github.com/zainhasib/zruss.git`
