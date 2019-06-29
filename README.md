@@ -17,3 +17,7 @@ Group Project
   - Xampp server
   - PHP
   - MongoDb
+
+
+## Pull the repository
+`git pull https://github.com/zainhasib/zruss.git`
