@@ -12,7 +12,7 @@
     <?php include_once('./header.php'); ?>
     <div class="header-gap"></div>
     <section>
-        <div class="wrapper">
+        <div class="wrapper" id="taste-wrapper">
             <div class="user">
                 <i class="fas fa-user fa-2x"></i>
             </div>
@@ -21,6 +21,11 @@
                 <button class="btn" id="tastecalc"> <i class="fas fa-puzzle-piece"></i> Know Your Interest</button>
             </div>
         <div>
+    </section>
+    <section>
+    <div class="taste-books">
+
+    </div>
     </section>
     <div id="taste" style="display: none;">
         <?php include_once('./overlay.php'); ?>
@@ -67,7 +72,31 @@
     </section>
     <?php include_once('./footer.php'); ?>
     
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
+    const tasteWrapper = document.querySelector('#taste-wrapper');
+    const tasteFromStorage = localStorage.getItem("TASTE");
+    if(tasteFromStorage !== null) {
+        tasteWrapper.style.display = "none";
+        console.log('Here People');
+        $.post("http://localhost:5001/book/recommend", {"answers" : tasteFromStorage} ,function( res ) {
+                let body = `
+                <div class="book-title">
+                    <h2>Your Recommedation</h2>
+                </div><div class="books">`;
+                data = JSON.parse(res);
+                for(let i=0;i<data.length;i++) {
+                    body += `<a class="book-link" href="./view.php?book=${data[i].id}"><div class="book">
+                                <img class="image" src="${data[i].image_url}" width="220px" height="300px">
+                                <div>${data[i].original_title}</div>
+                                <div class="author">${data[i].authors}</div>
+                            </div></a>`
+                }
+                body += '</div>';
+                const books = $('.taste-books');
+                books.html(body);
+            });
+    }
     const HttpClient = () => {
         this.get = function(url, callback) {
             var anHttpRequest = new XMLHttpRequest();
@@ -134,14 +163,33 @@
         if(finish) {
             taste.style.display = "none";
             if(document.querySelector('input[name="option"]:checked')) {
-                answers.push(document.querySelector('input[name="option"]:checked').previousElementSibling.innerHTML);
+                answers.push(document.querySelector('input[name="option"]:checked').previousElementSibling.innerHTML.toLowerCase());
             }
+            $.post( "http://localhost:5001/book/recommend", {"answers" : JSON.stringify(answers)} ,function( res ) {
+                let body = `
+                <div class="book-title">
+                    <h2>Your Recommedation</h2>
+                </div><div class="books">`;
+                data = JSON.parse(res);
+                for(let i=0;i<data.length;i++) {
+                    body += `<a class="book-link" href="./view.php?book=${data[i].id}"><div class="book">
+                                <img class="image" src="${data[i].image_url}" width="220px" height="300px">
+                                <div>${data[i].original_title}</div>
+                                <div class="author">${data[i].authors}</div>
+                            </div></a>`
+                }
+                body += '</div>';
+                const books = $('.taste-books');
+                books.html(body);
+            });
+            localStorage.setItem("TASTE", JSON.stringify(answers));
+            tasteWrapper.style.display = "none";
             console.log(answers);
         }
         presentItem = presentItem+1;
         if(presentItem<items.length) {
             if(document.querySelector('input[name="option"]:checked')) {
-                answers.push(document.querySelector('input[name="option"]:checked').previousElementSibling.innerHTML);
+                answers.push(document.querySelector('input[name="option"]:checked').previousElementSibling.innerHTML.toLowerCase());
             }
             populateItem();
         }

@@ -1,3 +1,6 @@
 {
-    "markdown.preview.breaks": true
+    "markdown.preview.breaks": true,
+    "gotoSymbolStack.currentStackPosition": 0,
+    "gotoSymbolStack.maxStackPosition": 0,
+    "gotoSymbolStack.filePositionInfo": []
 }

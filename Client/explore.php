@@ -8,7 +8,7 @@
   </head>
   <body>
     <?php include_once('./header.php'); ?>
-    <div class="cont1">
+    <div class="cont1" id='taste-wrapper'>
       <div class="icon">
         <i class="fas fa-user fa-2x"></i>
       </div>
@@ -25,6 +25,7 @@
     <div id="taste" style="display: none;">
         <?php include_once('./overlay.php'); ?>
     </div>
+    <br/>
     <div class="cont2">
       <div class="heading2">
         <h1>All Books</h1>
@@ -67,7 +68,13 @@
 
     <?php include_once('./footer.php'); ?>
     
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
+    const tasteWrapper = document.querySelector('#taste-wrapper');
+    const tasteFromStorage = localStorage.getItem("TASTE");
+    if(tasteFromStorage !== null) {
+        tasteWrapper.style.display = "none";
+    }
     const HttpClient = () => {
         this.get = function(url, callback) {
             var anHttpRequest = new XMLHttpRequest();
@@ -134,9 +141,12 @@
         if(finish) {
             taste.style.display = "none";
             if(document.querySelector('input[name="option"]:checked')) {
-                answers.push(document.querySelector('input[name="option"]:checked').previousElementSibling.innerHTML);
+                answers.push(document.querySelector('input[name="option"]:checked').previousElementSibling.innerHTML.toLowerCase());
             }
+            localStorage.setItem("TASTE", JSON.stringify(answers));
+            tasteWrapper.style.display = "none";
             console.log(answers);
+                window.location.replace('./index.php');
         }
         presentItem = presentItem+1;
         if(presentItem<items.length) {

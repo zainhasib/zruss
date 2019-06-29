@@ -170,6 +170,7 @@ header .container .nav ul li a {
                     <span class="content"></span>
                     <div class="dropdown hide">
                         <div id="logout" class="dropdown-item">Log Out</div>
+                        <div id="clear" class="dropdown-item">Clear Taste</div>
                     </div>
                 </div>
             </div>
@@ -197,6 +198,10 @@ header .container .nav ul li a {
     });
     $('#logout').click(e => {
         localStorage.setItem('USER_INFO', null);
+        window.location.replace('./index.php');
+    });
+    $('#clear').click(e => {
+        localStorage.removeItem('TASTE');
         window.location.replace('./index.php');
     });
 </script>

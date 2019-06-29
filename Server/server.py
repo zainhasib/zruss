@@ -31,7 +31,6 @@ def get_book_by_id_from_df(id):
     return b
 
 
-
 arr = df.to_dict(orient='records')
 #print(jsonString)
 
